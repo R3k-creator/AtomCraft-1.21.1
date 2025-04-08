@@ -203,3 +203,8 @@ idea {
         downloadJavadoc = true
     }
 }
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        include 'atomcraft.mixins.json'
+    }
+}

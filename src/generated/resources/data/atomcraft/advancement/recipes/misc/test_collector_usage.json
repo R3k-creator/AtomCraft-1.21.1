@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_collector": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomcraft:uranium_235_particles_collector"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atomcraft:test_collector_usage"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_collector"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atomcraft:test_collector_usage"
+    ]
+  }
+}
