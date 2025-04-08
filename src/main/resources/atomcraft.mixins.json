@@ -5,6 +5,8 @@
   "mixins": [
     "MixinCraftingMenu"
   ],
-  "client": [],
-  "server": []
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "atomcraft.refmap.json"
 }

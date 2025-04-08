@@ -25,8 +25,11 @@ public class Uranium235ParticlesCollector extends Item {
             CompoundTag tag;
             CustomData data = stack.get(DataComponents.CUSTOM_DATA);
 
+            // Initialisation des données si elles n'existent pas
             if (data == null || data.isEmpty()) {
                 tag = new CompoundTag();
+                tag.putInt("NextParticleTimer", 5 * 20);  // Initialisation du timer si absent
+                tag.putInt("ParticleCount", 0);  // Initialisation du compteur de particules
             } else {
                 tag = data.copyTag();
             }
@@ -34,21 +37,22 @@ public class Uranium235ParticlesCollector extends Item {
             int timer = tag.getInt("NextParticleTimer");
             int count = tag.getInt("ParticleCount");
 
-            if (!tag.contains("NextParticleTimer")) {
-                timer = 10 * 20;
-            } else if (timer > 0) {
-                timer--;
+            // Gestion du timer et incrémentation des particules
+            if (timer > 0) {
+                timer--;  // Décrémentation du timer
             } else {
                 if (count < 100) {
-                    count++;
+                    count++;  // Incrémentation des particules, maximum 100
                 }
-                timer = 10 * 20;
+                timer = 5 * 20;  // Réinitialisation du timer
             }
 
             tag.putInt("NextParticleTimer", timer);
             tag.putInt("ParticleCount", count);
 
+            // Mise à jour des données de l'item
             stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
+
         }
 
         super.inventoryTick(stack, world, entity, slot, selected);
@@ -82,17 +86,20 @@ public class Uranium235ParticlesCollector extends Item {
         // Création de la pile de particules
         ItemStack particles = new ItemStack(ModItems.URANIUM_235_PARTICLES.get(), particleCount);
 
-        // Réinitialise le collecteur
+        // Réinitialisation du collecteur
         tag.putInt("ParticleCount", 0);
-        tag.putInt("NextParticleTimer", 20 * 20);
+        tag.putInt("NextParticleTimer", 5 * 20);
 
+        // Création de l'item collector mis à jour
         ItemStack collectorCopy = stack.copy();
         collectorCopy.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
 
-        // On doit retourner le collecteur ET les particules : ça se fait via `getRecipeRemainder()`
-        // mais comme on ne peut renvoyer qu’un seul ItemStack ici, on gère ça autrement (via `CraftingEvent`, cf ci-dessous)
+        // Ajout de l'item de collecteur et des particules au résultat du craft
+        ItemStack resultStack = new ItemStack(ModItems.URANIUM_235_PARTICLES.get(), particleCount);
+        resultStack.setCount(particleCount);
 
-        return collectorCopy; // On retourne au moins l’item intact ici
+
+        return collectorCopy;  // On retourne l'item collector mis à jour
     }
 
     private CompoundTag getOrCreateCustomData(ItemStack stack) {
