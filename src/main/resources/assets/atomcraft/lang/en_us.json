@@ -1,0 +1,35 @@
+{
+  "item.atomcraft.uranium_235_ingot": "Uranium 235 Ingot",
+  "item.atomcraft.uranium_238_ingot": "Uranium 238 Ingot",
+  "item.atomcraft.raw_uranium_235": "Raw Uranium 235",
+  "item.atomcraft.dirty_raw_uranium_238": "Dirty Raw Uranium 238",
+  "item.atomcraft.purified_raw_uranium_238": "Purified Raw Uranium 238",
+  "item.atomcraft.dirty_uranium_238_dust": "Dirty Uranium 238 Dust",
+
+  "item.atomcraft.lead_plate": "Lead Plate",
+  "item.atomcraft.raw_lead": "Raw Lead",
+  "item.atomcraft.lead_ingot": "Lead ingot",
+
+  "item.atomcraft.anti_radiation_helmet": "Anti Radiation Helmet",
+  "item.atomcraft.anti_radiation_chestplate": "Anti Radiation Chestplate",
+  "item.atomcraft.anti_radiation_leggings": "Anti Radiation Leggings",
+  "item.atomcraft.anti_radiation_boots": "Anti Radiation Boots",
+
+  "item.atomcraft.uranium_238_hammer": "Uranium 238 Hammer",
+
+  "block.atomcraft.uranium_235_block": "Block of Uranium 235",
+  "block.atomcraft.uranium_238_block": "Block of Uranium 238",
+  "block.atomcraft.uranium_235_ore": "Uranium 235 Ore",
+  "block.atomcraft.uranium_238_ore": "Uranium 238 Ore",
+  "block.atomcraft.deepslate_uranium_235_ore": "Deepslate Uranium 235 Ore",
+  "block.atomcraft.deepslate_uranium_238_ore": "Deepslate Uranium 238 Ore",
+  "block.atomcraft.deepslate_lead_ore": "Deepslate Lead Ore",
+  "block.atomcraft.lead_ore": "Lead Ore",
+
+  "block.atomcraft.ore_washer": "Ore Washer",
+
+  "creativetab.atomcraft.atomcraft_items": "AtomCraft Items",
+  "creativetab.atomcraft.atomcraft_blocks": "AtomCraft Blocks",
+
+  "effect.atomcraft.radioactivity": "Radioactivity"
+}
