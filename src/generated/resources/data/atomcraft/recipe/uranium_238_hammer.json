@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "atomcraft:uranium_238_ingot"
+    },
+    "C": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "BCB",
+    " C "
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomcraft:uranium_238_hammer"
+  }
+}

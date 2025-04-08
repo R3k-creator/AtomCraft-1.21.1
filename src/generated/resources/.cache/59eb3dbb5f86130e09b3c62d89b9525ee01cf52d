@@ -1,0 +1,10 @@
+// 1.21.1	2025-04-07T22:47:22.4945203	Loot Tables
+7df6def5f0c079b72d1fd305e7b2e982690c4432 data/atomcraft/loot_table/blocks/deepslate_lead_ore.json
+be771285f87c234975f0e16afd64f9ea9be945da data/atomcraft/loot_table/blocks/deepslate_uranium_235_ore.json
+23014c2f8b32d0042aa1470ebb15c97ab88c846b data/atomcraft/loot_table/blocks/deepslate_uranium_238_ore.json
+0936bcac7a4010e43d2a751f1a5d5bccb0532015 data/atomcraft/loot_table/blocks/lead_ore.json
+c8fc3660c251d31de1eb79fb1a03e0e654c2ba7f data/atomcraft/loot_table/blocks/ore_washer.json
+aacb9e35b632ad1f64c3756ea0e28e1652bfbe1d data/atomcraft/loot_table/blocks/uranium_235_block.json
+00f1b5ab3c2db2ea967ba5c4141aee7fcbbcb2e6 data/atomcraft/loot_table/blocks/uranium_235_ore.json
+6e05be1f8b468a408f87bacce5467c848685b5ff data/atomcraft/loot_table/blocks/uranium_238_block.json
+979a145e780d4b10c3c9767fcc8631fdd81fda27 data/atomcraft/loot_table/blocks/uranium_238_ore.json

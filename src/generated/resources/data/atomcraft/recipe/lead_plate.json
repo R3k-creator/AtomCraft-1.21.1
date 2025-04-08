@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "atomcraft:uranium_238_hammer"
+    },
+    "C": {
+      "item": "atomcraft:lead_ingot"
+    }
+  },
+  "pattern": [
+    "BC ",
+    "   ",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomcraft:lead_plate"
+  }
+}

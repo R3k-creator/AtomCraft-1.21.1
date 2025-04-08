@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "atomcraft:item/dirty_uranium_238_dust"
+  }
+}

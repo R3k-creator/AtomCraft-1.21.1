@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "atomcraft:uranium_235_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "atomcraft:uranium_235_ingot"
+  }
+}

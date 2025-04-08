@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:leather"
+    },
+    "C": {
+      "item": "atomcraft:lead_plate"
+    }
+  },
+  "pattern": [
+    "BCB",
+    "BBB",
+    "BBB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomcraft:anti_radiation_chestplate"
+  }
+}

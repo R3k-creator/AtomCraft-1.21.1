@@ -1,0 +1,13 @@
+{
+  "values": [
+    "atomcraft:uranium_235_ore",
+    "atomcraft:deepslate_uranium_235_ore",
+    "atomcraft:uranium_238_ore",
+    "atomcraft:deepslate_uranium_238_ore",
+    "atomcraft:uranium_235_block",
+    "atomcraft:uranium_238_block",
+    "atomcraft:lead_ore",
+    "atomcraft:deepslate_lead_ore",
+    "atomcraft:ore_washer"
+  ]
+}

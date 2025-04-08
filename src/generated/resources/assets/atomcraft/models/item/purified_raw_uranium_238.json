@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "atomcraft:item/purified_raw_uranium_238"
+  }
+}
