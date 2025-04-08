@@ -25,8 +25,11 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onHammerUsage(BlockEvent.BreakEvent event) {
+
         Player player = event.getPlayer();
         ItemStack mainHandItem = player.getMainHandItem();
+
+        System.out.println("[DEBUG] Crafting event déclenché !");
 
         if(mainHandItem.getItem() instanceof HammerItem hammer && player instanceof ServerPlayer serverPlayer) {
             BlockPos initialBlockPos = event.getPos();

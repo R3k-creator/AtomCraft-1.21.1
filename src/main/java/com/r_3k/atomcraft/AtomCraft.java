@@ -3,13 +3,22 @@ package com.r_3k.atomcraft;
 import com.r_3k.atomcraft.block.ModBlocks;
 import com.r_3k.atomcraft.block.entity.ModBlockEntities;
 import com.r_3k.atomcraft.effect.ModEffects;
+import com.r_3k.atomcraft.event.CraftingEventHandler;
 import com.r_3k.atomcraft.item.ModCreativeModTab;
 import com.r_3k.atomcraft.item.ModItems;
+import com.r_3k.atomcraft.item.custom.Uranium235ParticlesCollector;
 import com.r_3k.atomcraft.screen.ModMenuTypes;
 import com.r_3k.atomcraft.screen.custom.OreWasherScreen;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.CustomData;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -58,6 +67,8 @@ public class AtomCraft
         ModEffects.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
+
+        NeoForge.EVENT_BUS.register(CraftingEventHandler.class);
 
         modEventBus.addListener(this::addCreative);
 

@@ -1,10 +1,11 @@
-// 1.21.1	2025-04-07T19:58:17.5770664	Recipes
+// 1.21.1	2025-04-08T18:17:47.8188324	Recipes
 d4bf9341cea0109f08b411cf308c1450f509c2b1 data/atomcraft/advancement/recipes/misc/anti_radiation_boots.json
 043abb13ffbcf703575a51fe12ce5b1483b2f74e data/atomcraft/advancement/recipes/misc/anti_radiation_chestplate.json
 3e62a385449b15b275b852a1cc911db59d0efae4 data/atomcraft/advancement/recipes/misc/anti_radiation_helmet.json
 2ed1de796554cac28f0400186b5cb3d292f86de7 data/atomcraft/advancement/recipes/misc/anti_radiation_leggings.json
 34e93f3640cc69b25b84877ddf9d7f7c395d7823 data/atomcraft/advancement/recipes/misc/lead_plate.json
 82f53d4b9aee7b6c69a864563ac23e02cc69f82f data/atomcraft/advancement/recipes/misc/raw_uranium_238_from_dust.json
+261e26c623cc11fd45ecbb6145688c8bd8a63b47 data/atomcraft/advancement/recipes/misc/test_collector_usage.json
 cf9c6d80bda6a4075a3b876211235fe637d8ceed data/atomcraft/advancement/recipes/misc/uranium_235_block.json
 85e02b16b74f3d212b128391196f1ed76526edfb data/atomcraft/advancement/recipes/misc/uranium_235_ingot_from_block.json
 71da014ee5d450620137ba2fa9f1fbd251cea837 data/atomcraft/advancement/recipes/misc/uranium_238_block.json
@@ -16,6 +17,7 @@ b69220b47996664957895b3916f2a77ebbaa8019 data/atomcraft/recipe/anti_radiation_ch
 5acea291c7deb0c86b4acfef85e6decfeede54d1 data/atomcraft/recipe/anti_radiation_leggings.json
 d77a466d25f4fb593514757302148eb07dfb0094 data/atomcraft/recipe/lead_plate.json
 629ef34dabbb1bae6950ccf5e3836bdb1bb24776 data/atomcraft/recipe/raw_uranium_238_from_dust.json
+44ea9912d2fba359c2f8f4da08b4b3f6007d95f0 data/atomcraft/recipe/test_collector_usage.json
 6404e8b541408664df307b1011e2198df7e54f11 data/atomcraft/recipe/uranium_235_block.json
 35c63118275f557282b5b72f5491c3c4f3bf3fce data/atomcraft/recipe/uranium_235_ingot_from_block.json
 7de987c9973d354eab0a3f60bf6338c5521a0bf7 data/atomcraft/recipe/uranium_238_block.json

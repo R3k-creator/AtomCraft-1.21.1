@@ -65,6 +65,6 @@ public class ModItems {
             () -> new HammerItem(ModToolTiers.URANIUM_238, new Item.Properties()
                     .attributes(PickaxeItem.createAttributes(ModToolTiers.URANIUM_238, 7f, -3.5f))));
 
-    public static final DeferredItem<Item> URANIUM_235_PARTICLES_COLLECTOR = ITEMS.register("uranium235_particles_collector",
+    public static final DeferredItem<Item> URANIUM_235_PARTICLES_COLLECTOR = ITEMS.register("uranium_235_particles_collector",
             () -> new Uranium235ParticlesCollector(new Item.Properties()));
 }
