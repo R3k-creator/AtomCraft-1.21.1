@@ -1,13 +1,19 @@
 package com.r_3k.atomcraft.event;
 
 import com.r_3k.atomcraft.AtomCraft;
+import com.r_3k.atomcraft.item.ModItems;
 import com.r_3k.atomcraft.item.custom.HammerItem;
+import com.r_3k.atomcraft.item.custom.Uranium235ParticlesCollector;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.CustomData;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
 import java.util.HashSet;

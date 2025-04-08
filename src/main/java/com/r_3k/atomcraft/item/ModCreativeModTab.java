@@ -42,6 +42,9 @@ public class ModCreativeModTab {
                         output.accept(ModItems.ANTI_RADIATION_BOOTS);
 
                         output.accept(ModItems.URANIUM_238_HAMMER);
+
+                        output.accept(ModItems.URANIUM_235_PARTICLES_COLLECTOR);
+                        output.accept(ModItems.URANIUM_235_PARTICLES);
                     })
                     .build());
 

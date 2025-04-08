@@ -2,6 +2,7 @@ package com.r_3k.atomcraft.item;
 
 import com.r_3k.atomcraft.AtomCraft;
 import com.r_3k.atomcraft.item.custom.HammerItem;
+import com.r_3k.atomcraft.item.custom.Uranium235ParticlesCollector;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -41,6 +42,9 @@ public class ModItems {
     public static final DeferredItem<Item> LEAD_INGOT = ITEMS.register("lead_ingot",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> URANIUM_235_PARTICLES = ITEMS.register("uranium_235_particules",
+            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<ArmorItem> ANTI_RADIATION_HELMET = ITEMS.register("anti_radiation_helmet",
             () -> new ArmorItem(ModArmorMaterials.ANTI_RADIATION_SUIT_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(6))));
@@ -60,4 +64,7 @@ public class ModItems {
     public static final DeferredItem<HammerItem> URANIUM_238_HAMMER = ITEMS.register("uranium_238_hammer",
             () -> new HammerItem(ModToolTiers.URANIUM_238, new Item.Properties()
                     .attributes(PickaxeItem.createAttributes(ModToolTiers.URANIUM_238, 7f, -3.5f))));
+
+    public static final DeferredItem<Item> URANIUM_235_PARTICLES_COLLECTOR = ITEMS.register("uranium235_particles_collector",
+            () -> new Uranium235ParticlesCollector(new Item.Properties()));
 }
