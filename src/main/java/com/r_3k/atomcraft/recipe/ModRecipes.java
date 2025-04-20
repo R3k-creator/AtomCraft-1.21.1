@@ -9,8 +9,10 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModRecipes {
+
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
             DeferredRegister.create(Registries.RECIPE_SERIALIZER, AtomCraft.MOD_ID);
+
     public static final DeferredRegister<RecipeType<?>> TYPES =
             DeferredRegister.create(Registries.RECIPE_TYPE, AtomCraft.MOD_ID);
 
@@ -19,7 +21,10 @@ public class ModRecipes {
 
     public static final DeferredHolder<RecipeType<?>, RecipeType<ParticleExtractionRecipe>> PARTICLE_EXTRACTION_TYPE =
             TYPES.register("particle_extraction", () -> new RecipeType<>() {
-                @Override public String toString() { return "particle_extraction"; }
+                @Override
+                public String toString() {
+                    return "particle_extraction";
+                }
             });
 
     public static void register(IEventBus bus) {

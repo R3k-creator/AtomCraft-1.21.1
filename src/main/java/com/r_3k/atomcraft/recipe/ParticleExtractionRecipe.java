@@ -14,50 +14,39 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.component.CustomData;
 
-public record ParticleExtractionRecipe(Ingredient ingredient,
-                                       ItemStack outputPrototype)
-        implements Recipe<CraftingInput> {
+public record ParticleExtractionRecipe(Ingredient ingredient, ItemStack outputPrototype) implements Recipe<SingleRecipeInput> {
 
     @Override
-    public boolean matches(CraftingInput inv, Level world) {
-        if (world.isClientSide) return false;
-        for (int i = 0; i < inv.size(); i++) {
-            ItemStack stack = inv.getItem(i);
-            if (!stack.isEmpty() && ingredient.test(stack)) {
-                return true;
-            }
-        }
-        return false;
+    public boolean matches(SingleRecipeInput input, Level world) {
+        if (world.isClientSide()) return false;
+        if (input.size() != 1) return false;
+        return ingredient.test(input.getItem(0));
     }
 
     @Override
-    public ItemStack assemble(CraftingInput inv, HolderLookup.Provider prov) {
-        // on récupère le CustomData du collecteur et on lit "ParticleCount"
-        for (int i = 0; i < inv.size(); i++) {
-            ItemStack in = inv.getItem(i);
-            if (ingredient.test(in)) {
-                CustomData data = in.get(DataComponents.CUSTOM_DATA);
-                CompoundTag tag = (data == null || data.isEmpty()) ? new CompoundTag() : data.copyTag();
-                int count = tag.getInt("ParticleCount");
-                ItemStack out = outputPrototype.copy();
-                out.setCount(count);
-                return out;
-            }
+    public ItemStack assemble(SingleRecipeInput input, HolderLookup.Provider provider) {
+        if (input.size() != 1) return ItemStack.EMPTY;
+        ItemStack in = input.getItem(0);
+
+        if (ingredient.test(in)) {
+            CustomData data = in.get(DataComponents.CUSTOM_DATA);
+            CompoundTag tag = (data == null || data.isEmpty()) ? new CompoundTag() : data.copyTag();
+            int count = tag.getInt("ParticleCount");
+            ItemStack out = outputPrototype.copy();
+            out.setCount(Math.max(1, count));
+            return out;
         }
         return ItemStack.EMPTY;
     }
 
     @Override
-    public NonNullList<ItemStack> getRemainingItems(CraftingInput inv) {
-        // on renvoie le collecteur mis à jour (ParticleCount = 0) grâce à getCraftingRemainingItem
-        NonNullList<ItemStack> remainders = NonNullList.withSize(inv.size(), ItemStack.EMPTY);
-        for (int i = 0; i < inv.size(); i++) {
-            ItemStack in = inv.getItem(i);
-            if (ingredient.test(in)) {
-                Item item = in.getItem();
-                if (item.hasCraftingRemainingItem(in)) {
-                    remainders.set(i, item.getCraftingRemainingItem(in));
-                }
+    public NonNullList<ItemStack> getRemainingItems(SingleRecipeInput input) {
+        NonNullList<ItemStack> remainders = NonNullList.withSize(1, ItemStack.EMPTY);
+        ItemStack in = input.item();
+        if (ingredient.test(in)) {
+            Item item = in.getItem();
+            if (item.hasCraftingRemainingItem(in)) {
+                remainders.set(0, item.getCraftingRemainingItem(in));
             }
         }
         return remainders;
@@ -65,18 +54,16 @@ public record ParticleExtractionRecipe(Ingredient ingredient,
 
     @Override
     public NonNullList<Ingredient> getIngredients() {
-        NonNullList<Ingredient> list = NonNullList.create();
-        list.add(ingredient);
-        return list;
+        return NonNullList.of(ingredient);
     }
 
     @Override
-    public boolean canCraftInDimensions(int w, int h) {
+    public boolean canCraftInDimensions(int width, int height) {
         return true;
     }
 
     @Override
-    public ItemStack getResultItem(HolderLookup.Provider prov) {
+    public ItemStack getResultItem(HolderLookup.Provider provider) {
         return outputPrototype.copy();
     }
 
@@ -89,8 +76,6 @@ public record ParticleExtractionRecipe(Ingredient ingredient,
     public RecipeType<?> getType() {
         return ModRecipes.PARTICLE_EXTRACTION_TYPE.get();
     }
-
-    // --- Sérialisation (codec + streamCodec) ---
 
     public static class Serializer implements RecipeSerializer<ParticleExtractionRecipe> {
         public static final MapCodec<ParticleExtractionRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
@@ -105,8 +90,13 @@ public record ParticleExtractionRecipe(Ingredient ingredient,
                         ParticleExtractionRecipe::new
                 );
 
-        @Override public MapCodec<ParticleExtractionRecipe> codec() { return CODEC; }
-        @Override public StreamCodec<RegistryFriendlyByteBuf, ParticleExtractionRecipe> streamCodec() {
+        @Override
+        public MapCodec<ParticleExtractionRecipe> codec() {
+            return CODEC;
+        }
+
+        @Override
+        public StreamCodec<RegistryFriendlyByteBuf, ParticleExtractionRecipe> streamCodec() {
             return STREAM_CODEC;
         }
     }
