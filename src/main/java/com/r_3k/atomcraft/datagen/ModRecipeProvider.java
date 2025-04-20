@@ -112,10 +112,5 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.URANIUM_238_INGOT.get(), 9)
                 .requires(ModBlocks.URANIUM_238_BLOCK)
                 .unlockedBy("has_uranium_238_block", has(ModBlocks.URANIUM_238_BLOCK)).save(recipeOutput, "atomcraft:uranium_238_ingot_from_block");
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.STONE) // n'importe quel item de sortie
-                .requires(ModItems.URANIUM_235_PARTICLES_COLLECTOR.get())
-                .unlockedBy("has_collector", has(ModItems.URANIUM_235_PARTICLES_COLLECTOR.get()))
-                .save(recipeOutput, "atomcraft:test_collector_usage");
     }
 }

@@ -42,7 +42,7 @@ public class ModItems {
     public static final DeferredItem<Item> LEAD_INGOT = ITEMS.register("lead_ingot",
             () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> URANIUM_235_PARTICLES = ITEMS.register("uranium_235_particules",
+    public static final DeferredItem<Item> URANIUM_235_PARTICLE = ITEMS.register("uranium_235_particle",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<ArmorItem> ANTI_RADIATION_HELMET = ITEMS.register("anti_radiation_helmet",

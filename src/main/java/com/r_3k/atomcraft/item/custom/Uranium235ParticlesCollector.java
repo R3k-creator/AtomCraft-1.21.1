@@ -84,7 +84,7 @@ public class Uranium235ParticlesCollector extends Item {
         int particleCount = tag.getInt("ParticleCount");
 
         // Création de la pile de particules
-        ItemStack particles = new ItemStack(ModItems.URANIUM_235_PARTICLES.get(), particleCount);
+        ItemStack particles = new ItemStack(ModItems.URANIUM_235_PARTICLE.get(), particleCount);
 
         // Réinitialisation du collecteur
         tag.putInt("ParticleCount", 0);
@@ -95,7 +95,7 @@ public class Uranium235ParticlesCollector extends Item {
         collectorCopy.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
 
         // Ajout de l'item de collecteur et des particules au résultat du craft
-        ItemStack resultStack = new ItemStack(ModItems.URANIUM_235_PARTICLES.get(), particleCount);
+        ItemStack resultStack = new ItemStack(ModItems.URANIUM_235_PARTICLE.get(), particleCount);
         resultStack.setCount(particleCount);
 
 

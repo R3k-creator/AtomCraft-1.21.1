@@ -8,7 +8,6 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
@@ -17,10 +16,10 @@ import net.minecraft.world.item.component.CustomData;
 
 public record ParticleExtractionRecipe(Ingredient ingredient,
                                        ItemStack outputPrototype)
-        implements Recipe<RecipeInput> {
+        implements Recipe<CraftingInput> {
 
     @Override
-    public boolean matches(RecipeInput inv, Level world) {
+    public boolean matches(CraftingInput inv, Level world) {
         if (world.isClientSide) return false;
         for (int i = 0; i < inv.size(); i++) {
             ItemStack stack = inv.getItem(i);
@@ -32,7 +31,7 @@ public record ParticleExtractionRecipe(Ingredient ingredient,
     }
 
     @Override
-    public ItemStack assemble(RecipeInput inv, HolderLookup.Provider prov) {
+    public ItemStack assemble(CraftingInput inv, HolderLookup.Provider prov) {
         // on récupère le CustomData du collecteur et on lit "ParticleCount"
         for (int i = 0; i < inv.size(); i++) {
             ItemStack in = inv.getItem(i);
@@ -49,7 +48,7 @@ public record ParticleExtractionRecipe(Ingredient ingredient,
     }
 
     @Override
-    public NonNullList<ItemStack> getRemainingItems(RecipeInput inv) {
+    public NonNullList<ItemStack> getRemainingItems(CraftingInput inv) {
         // on renvoie le collecteur mis à jour (ParticleCount = 0) grâce à getCraftingRemainingItem
         NonNullList<ItemStack> remainders = NonNullList.withSize(inv.size(), ItemStack.EMPTY);
         for (int i = 0; i < inv.size(); i++) {

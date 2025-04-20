@@ -1,10 +1,9 @@
 {
   "type": "atomcraft:particle_extraction",
   "ingredient": {
-    "item": "atomcraft:uranium_235_particles_collector"
+    "item": "atomcraft:uranium_235_particle_collector"
   },
   "result": {
-    "item": "atomcraft:uranium_235_particle",
-    "count": 1
+    "id": "atomcraft:uranium_235_particle"
   }
 }
